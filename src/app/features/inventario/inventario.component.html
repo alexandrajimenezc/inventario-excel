@@ -1,0 +1,120 @@
+<div class="container-inventory">
+  <h1>Crear Inventario de pedido</h1>
+
+  <form [formGroup]="inventoryForm">
+    <section class="inventory-info">
+      <h3>Datos del inventario por cliente</h3>
+      <div class="column-form">
+        <div class="row-form">
+          <div class="input-container">
+            <label for="customerName">Nombre del cliente:</label>
+            <input
+              type="text"
+              id="customerName"
+              formControlName="customerName"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="items">
+      <h3>Productos</h3>
+      <div
+        formArrayName="items"
+        *ngFor="let item of items.controls; let i = index"
+      >
+        <div [formGroupName]="i" class="column-form">
+          <div class="row-form">
+            <div class="input-container--items">
+              <label for="item">Producto:</label>
+              <input type="text" id="item" formControlName="item" />
+            </div>
+
+            <div class="input-container--items">
+              <label for="price">Precio:</label>
+              <input type="text" id="price" formControlName="price" />
+            </div>
+            <div class="input-container--items">
+              <label for="quantity">Cantidad:</label>
+              <input type="text" id="quantity" formControlName="quantity" />
+            </div>
+            <div class="container-btn-items">
+              <button
+                class="btn btn-danger"
+                (click)="deleteItems(i)"
+                title="Eliminar item"
+              >
+                <i class="bi bi-trash"></i> Borrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-btn">
+        <button type="button" class="btn btn-primary" (click)="addItem()">
+          Agregar item
+        </button>
+      </div>
+    </section>
+
+    <section class="totals">
+      <div class="column-form">
+        <div class="row-form">
+          <div class="input-container">
+            <label for="currency">Moneda:</label>
+            <select id="currency" formControlName="currency">
+              <option value="EUR">EUR</option>
+              <option value="USD">USD</option>
+              <option value="CLP">CLP</option>
+            </select>
+          </div>
+          <div class="input-container">
+            <label for="idRef">ID de referencia:</label>
+            <input type="text" id="idRef" formControlName="idRef" />
+          </div>
+          <div class="input-container">
+            <label for="subtotal">Subtotal:</label>
+            <input type="text" id="subtotal" formControlName="subtotal" />
+          </div>
+        </div>
+        <div class="row-form">
+          <div class="input-container">
+            <label for="discount">Descuento (%):</label>
+            <input
+              type="number"
+              id="discount"
+              formControlName="discount"
+              (change)="calculateTotal()"
+            />
+          </div>
+          <div class="input-container">
+            <label for="taxes">Impuesto (%):</label>
+            <input
+              type="number"
+              id="taxes"
+              formControlName="taxes"
+              (change)="calculateTotal()"
+            />
+          </div>
+          <div class="input-container">
+            <label for="total">Total:</label>
+            <input
+              type="number"
+              id="total"
+              formControlName="total"
+              (change)="calculateTotal()"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </form>
+  <div class="container-btn">
+    <button type="button" class="btn btn-save" (click)="getForm()">
+      Guardar
+    </button>
+  </div>
+  <!-- <app-pdf [type]="'invoice'" [data]="this.invoiceForm.value"></app-pdf> -->
+</div>

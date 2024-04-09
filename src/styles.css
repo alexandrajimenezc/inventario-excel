@@ -1,1 +1,101 @@
+*{
+  margin: 0;
+}
+:root {
+  --fc-border-color: black;
+  --fc-daygrid-event-dot-width: 25px;
+  --fc-small-font-size: .85em;
+  --fc-page-bg-color: #cca3a3;
+  --fc-neutral-bg-color: rgba(208, 208, 208, 0.3);
+  --fc-neutral-text-color: #808080;
+
+
+  --fc-button-text-color: #fff;
+  --fc-button-bg-color: #2C3E50;
+  --fc-button-border-color: #2C3E50;
+  --fc-button-hover-bg-color: #1e2b37;
+  --fc-button-hover-border-color: #1a252f;
+  --fc-button-active-bg-color: #5c646b;
+  --fc-button-active-border-color: #151e27;
+
+  --fc-event-bg-color: #0a121a;
+  --fc-event-border-color: #37add8;
+  --fc-event-text-color: #fff;
+  --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
+
+  --fc-more-link-bg-color: #d0d0d0;
+  --fc-more-link-text-color: inherit;
+
+  --fc-event-resizer-thickness: 8px;
+  --fc-event-resizer-dot-total-width: 8px;
+  --fc-event-resizer-dot-border-width: 1px;
+
+  --fc-non-business-color: rgba(215, 215, 215, 0.3);
+  --fc-bg-event-color: rgb(143, 223, 130);
+  --fc-bg-event-opacity: 0.3;
+  --fc-highlight-color: rgba(188, 232, 241, 0.3);
+  --fc-today-bg-color: rgba(255, 220, 40, 0.15);
+  --fc-now-indicator-color: red;
+}
+
+
+.container-btn {
+  margin: 2em 3em 1em 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.column-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row-form {
+  flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-container {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  /* background-color: antiquewhite; */
+  width: 32%;
+}
+
+.input-container--items {
+  display: flex;
+  flex-direction: column;
+  /* background-color: antiquewhite; */
+  width: 28%;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-btn-items {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+input,
+select,
+textarea {
+  /* width: 50%; */
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: 100%;
+  padding: 8px;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 0.8em;
+  color: #28323a;
+}
+
 /* You can add global styles to this file, and also import other style files */
